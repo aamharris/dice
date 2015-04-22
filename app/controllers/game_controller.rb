@@ -1,6 +1,5 @@
 class GameController < ApplicationController
   def index
-    @roll = @@dice.roll
   end
 
   def create
@@ -8,12 +7,12 @@ class GameController < ApplicationController
     redirect_to game_index_path
   end
 
-  # def #Custom route
-  #   #have roll dice button
-  #   #AJAX call to roll dice 
-
-  #   @dice.roll
-  # end
-
-
+  def rolldice
+    if @@dice.rolls_left?
+      @roll = @@dice.roll
+    else
+      @@dice = Dice.new(6, 2)
+      rolldice
+    end
+  end
 end
