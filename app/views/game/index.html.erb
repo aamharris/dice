@@ -1,0 +1,8 @@
+<h1> In Game </h1>
+<% @roll.each_with_index do |die, i| %>
+	<div class="die die<%= i %>">
+		<%= die %>
+	</div>
+<% end %> 
+
+<button class="roll-dice-btn">Roll Dice</button>
