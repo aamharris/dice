@@ -8,14 +8,18 @@ class Dice
     @sides.flatten!
     @dice_roll_possibilities = @sides.combination(number_of_dice).to_a
   end
+
+  def rolls_left?
+    if @dice_roll_possibilities.length >= 1
+      return true
+    else
+      return false
+    end
+  end
   
   def roll
-    if @dice_roll_possibilities.length >= 1
-      roll = @dice_roll_possibilities.sample
-      @dice_roll_possibilities.delete(roll)
-      return roll
-    else
-      return "empty"
-    end
+    roll = @dice_roll_possibilities.sample
+    @dice_roll_possibilities.delete(roll)
+    return roll
   end
 end
