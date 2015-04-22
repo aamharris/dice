@@ -1,13 +1,13 @@
 $( document ).ready(function() {
   $(".roll-dice-btn").on("click", function(){
-  	console.log("Click!")
   	var request = $.ajax({
-  		url: '/game',
+  		url: '/rolldice',
   		type: "GET"
   	});
 
   	request.done(function(response){
-  		console.log(response)
+      result = $(response).filter(".dice-container");
+      $(".all-dice").html($(result).html());
   	});
   });
 });
