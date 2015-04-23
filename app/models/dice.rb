@@ -7,10 +7,11 @@ class Dice
     end
     @sides.flatten!
     @dice_roll_possibilities = @sides.combination(number_of_dice).to_a
+    @dice_roll_possibilities.uniq!
   end
 
   def rolls_left?
-    if @dice_roll_possibilities.length >= 1
+    if @dice_roll_possibilities.length > 0
       return true
     else
       return false
@@ -19,7 +20,7 @@ class Dice
   
   def roll
     roll = @dice_roll_possibilities.sample
+    p @dice_roll_possibilities
     @dice_roll_possibilities.delete(roll)
-    return roll
   end
 end
