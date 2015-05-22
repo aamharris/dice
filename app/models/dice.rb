@@ -20,7 +20,6 @@ class Dice
   
   def roll
     roll = @dice_roll_possibilities.sample
-    p @dice_roll_possibilities
     @dice_roll_possibilities.delete(roll)
   end
 end
