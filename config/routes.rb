@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'games#new'
 
   resources :welcome, only: [:index]
-  resources :game, only: [:index, :create]
+  resources :games, only: [:index, :create, :new]
 
-  get '/rolldice', to: 'game#rolldice', as: 'roll_dice'
+  get '/rolldice', to: 'games#rolldice', as: 'roll_dice'
    
 end
