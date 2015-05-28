@@ -10,25 +10,52 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree 
- *= require bootstrap.min.css
+ *= require bootstrap
+ *= require bootstrap-theme
+ *= require_tree .
  *= require_self
  */
 
-body {
-     margin: 0;
-     padding: 0;
+html,body {
+  height:100%;
 }
 
-.container {
-	margin: auto;
+h1 {
+  font-family: Arial,sans-serif
+  font-size:80px;
+  color:#DDCCEE;
 }
 
-
-.all-dice {
-	height: 200px;
+.lead {
+	color:#DDCCEE;
 }
 
-.start-btn {
-	padding: 2%;
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+  min-height:100%;
+  background-color:#110022;
+  color:#eee;
+  overflow:hidden;
+}
+
+.container-full a {
+  color:#efefef;
+  text-decoration:none;
+}
+
+.v-center {
+  margin-top:7%;
+}
+
+.input-group-btn {
+	padding: 5%;
+}
+
+.input-player-first {
+	margin-top: 15%;
+}
+.input-player {
+	margin-bottom: 10%; 
 }
