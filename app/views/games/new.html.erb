@@ -1,13 +1,39 @@
-<h1>Backgammon Dice Roller</h1> 
-
-<form action="/games", method="POST", name="players">
-	<label for="player_1">Player 1</label>
-	<input type="text" name="player_1">
-	<label for="player_2">Player 2</label>
-	<input type="text" name="player_2">
-	<br><br>
-	<label for="first">Who goes first?</label>
-	<input type="radio" name="first" value="player_1" checked>Player 1
-	<input type="radio" name="first" value="player_2">Player 2
-	<input type="submit" value="Start Game">
-</form>
+<div class="container splash-screen">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 text-center">
+			<h1>Backgammon Dice Roller</h1>
+		</div>
+		<div class="new-game-form">
+			<form action="/games", method="POST", name="players">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 text-center">
+						<label for="player_1">Player 1</label>
+						<input type="text" name="player_1">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 text-center">
+						<label for="player_2">Player 2</label>
+						<input type="text" name="player_2">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 text-center">
+						<label for="first">Who goes first?</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 text-center">
+						<input type="radio" name="first" value="player_1" checked>Player 1
+						<input type="radio" name="first" value="player_2">Player 2
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1 text-center start-btn">
+						<input type="submit" class="btn btn-danger btn-lg btn-huge lato" value="Start Game">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
