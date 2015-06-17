@@ -59,3 +59,9 @@ h1 {
 .input-player {
 	margin-bottom: 10%; 
 }
+.all-dice {
+  height: 200px; 
+}
+.roll-dice-btn {
+  display: none;
+}
