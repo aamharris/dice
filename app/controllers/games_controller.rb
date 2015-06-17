@@ -26,6 +26,15 @@ class GamesController < ApplicationController
     reset_session
     session[:player_1] = params[:player_1]  
     session[:player_2] = params[:player_2]
+
+    if session[:player_1] == ""
+      session[:player_1] = "Player 1"
+    end
+
+    if session[:player_2] == ""
+      session[:player_2] = "Player 2"
+    end
+
     @@game.players_turn = params[:first].to_i
     @@game.players[0].name = session[:player_1]
     @@game.players[1].name = session[:player_2]
