@@ -1,4 +1,10 @@
 $( document ).ready(function() {
+  $(".player-turn-btn").on("click", function(){
+    $(".all-dice").empty();
+    $(".player-turn-btn").hide();
+    $(".roll-dice-btn").show(); 
+  })
+
   $(".roll-dice-btn").on("click", function(){
   	var request = $.ajax({
   		url: '/rolldice',
@@ -6,8 +12,13 @@ $( document ).ready(function() {
   	});
 
   	request.done(function(response){
-      result = $(response).filter(".dice-container");
+      var name = response.name
+      result = $(response.html_content).filter(".dice-container");
       $(".all-dice").html($(result).html());
+      $(".player-turn-btn").html(name + "'s Turn")
+
+      $(".roll-dice-btn").hide();
+      $(".player-turn-btn").show(); 
   	});
   });
 });

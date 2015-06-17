@@ -1,8 +1,12 @@
+
 <div class="dice-container">
-	<%= @player.name %> 
-<% @roll.each do |die| %>
+	<div class="player-name">
+		<%= @player.name %>'s Roll 
+	</div>
+	<% @roll.each do |die| %>
 	<div class="die">
 		<%= die %>
 	</div>
-<% end %>
+	<% end %>
 </div>
+
