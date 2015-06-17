@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree
+
+$( document ).ready(function() {
+    $( "input[name='player_1']" ).keyup(function() {
+  		$("label[for='player_1']").html($(this).val())
+		});
+
+		$( "input[name='player_2']" ).keyup(function() {
+  		$("label[for='player_2']").html($(this).val())
+		});
+}); 
+
