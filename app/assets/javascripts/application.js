@@ -17,11 +17,25 @@
 
 $( document ).ready(function() {
     $( "input[name='player_1']" ).keyup(function() {
-  		$("label[for='player_1']").html($(this).val())
+    	if ($(this).val() == "")
+    	{
+    		$("label[for='player_1']").html("Player 1");
+    	}
+    	else
+    	{
+    		$("label[for='player_1']").html($(this).val())	
+    	}
 		});
 
 		$( "input[name='player_2']" ).keyup(function() {
-  		$("label[for='player_2']").html($(this).val())
-		});
+  		if ($(this).val() == "")
+    	{
+    		$("label[for='player_2']").html("Player 2");
+    	}
+    	else
+    	{
+    		$("label[for='player_2']").html($(this).val())	
+    	}
+	});
 }); 
 
