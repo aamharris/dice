@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @players_turn = session[:first].to_i
+    @players_turn = session[:players_turn].to_i
     @player = session[:players][@players_turn]["name"]  
   end
 
@@ -46,7 +46,7 @@ class GamesController < ApplicationController
   end
 
   def rolldice
-    @players_turn = session[:first].to_i
+    @players_turn = session[:players_turn].to_i
     @player = session[:players][@players_turn]
     @player_dice = session[:players][@players_turn]["dice"]["dice_roll_possibilities"]
     @player_name = session[:players][@players_turn]["name"] 
@@ -67,7 +67,7 @@ class GamesController < ApplicationController
       @players_turn = 0
     end
 
-    session[:first] = @players_turn
+    session[:players_turn] = @players_turn
 
     next_player = session[:players][@players_turn]["name"]
     next_player
